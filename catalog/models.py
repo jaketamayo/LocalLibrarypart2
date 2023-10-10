@@ -50,14 +50,14 @@ class Book(models.Model):
     book_image = models.ImageField(upload_to='images/', null=True, blank=True)
 
 
-def __str__(self):
-    """String for representing the Model object."""
-    return self.title
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
 
 
-def get_absolute_url(self):
-    """Returns the URL to access a detail record for this book."""
-    return reverse('book_detail', args=[str(self.id)])
+    def get_absolute_url(self):
+        """Returns the URL to access a detail record for this book."""
+        return reverse('book_detail', args=[str(self.id)])
 
 
 class BookInstance(models.Model):
